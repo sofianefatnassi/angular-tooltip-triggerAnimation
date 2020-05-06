@@ -1,0 +1,9 @@
+
+<div class="tooltip" (click)="showTooltip()">
+	<div class="tooltip-inner" *ngIf="rootScope.show" [@fadeInOut-1]>
+		<button type="button" class="close" aria-label="Close"  ><span aria-hidden="true">×</span></button>
+		<div class="tooltip-content">
+      <p>{{text}}</p>
+    </div>
+	</div>
+</div>
