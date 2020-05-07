@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import {RootScopeService} from '../rootScope.service.ts';
+import {IRoot} from '../IRoot.interface'
 export const fadeInOut = (name = 'fadeInOut', duration = 0.1) =>
   trigger(name, [
     transition(':enter', [
@@ -13,7 +14,7 @@ export const fadeInOut = (name = 'fadeInOut', duration = 0.1) =>
 @Component({
   selector : 'tooltip',
   templateUrl: './showup.component.html',
-  styles: ['./showup.component.css'],
+  styleUrls: ['./showup.component.css'],
   animations: [
     fadeInOut('fadeInOut-1', 0.3)
   ]
@@ -22,10 +23,10 @@ export const fadeInOut = (name = 'fadeInOut', duration = 0.1) =>
 export class ShowupComponent implements OnInit{
 
   @Input('text') text: string;
-  @Input('parentShow') parnetShow: boolean;
+  rootScope: IRoot;
 
- constructor(private rootScope: RootScopeService){
-    this.rootScope.getRootScope().subscribe(res => {
+ constructor(private rootScopeService: RootScopeService){
+    this.rootScopeService.getRootScope().subscribe(res => {
       if(res){
         this.rootScope.show = res.show;
       } else {

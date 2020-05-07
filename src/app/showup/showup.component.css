@@ -1,0 +1,77 @@
+.tooltip {
+  position: absolute;
+    z-index: 1070;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-break: auto;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+}
+
+.tooltip-content {
+    padding: 17px;
+    text-align: left;
+    width: 250px;
+}
+
+.tooltip, .tooltip-content {
+    font-size: 15px !important;
+    line-height: 1.5em !important;
+}
+
+.tooltip-inner {
+    border-color: #000 !important;
+    color: #000 !important;
+}
+
+.tooltip-inner {
+    /* color: #7099ab; */
+    background-color: #ffffff;
+    max-width: 400px;
+    border: 1px solid #e5e5e5;
+}
+
+.tooltip-inner {
+    /* max-width: 200px; */
+    padding: 3px 8px;
+    /* color: #fff; */
+    text-align: center;
+    /* background-color: #000; */
+    border-radius: 4px;
+}
+
+button.close {
+    background: none !important;
+    line-height: 1.5em !important;
+}
+
+.tooltip-inner button {
+    opacity: 1;
+    outline: none;
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    /* background: transparent; */
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.tooltip.bottom {
+    margin-top: 3px;
+    padding: 5px 0;
+}

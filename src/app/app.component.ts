@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import {RootScopeService} from './rootScope.service.ts';
+import {IRoot} from './IRoot.interface';
 export const fadeInOut = (name = 'fadeInOut', duration = 0.1) =>
   trigger(name, [
     transition(':enter', [
@@ -19,8 +20,9 @@ export const fadeInOut = (name = 'fadeInOut', duration = 0.1) =>
   ]
 })
 export class AppComponent implements OnInit  {
-  constructor(private rootScope: RootScopeService){
-    this.rootScope.getRootScope().subscribe(res => {
+  rootScope: IRoot;
+  constructor(private rootScopeService: RootScopeService){
+    this.rootScopeService.getRootScope().subscribe(res => {
       if(res){
         console.log(res);
         this.rootScope.show = res.show;
