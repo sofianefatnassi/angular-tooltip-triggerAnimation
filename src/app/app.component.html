@@ -1,2 +1,2 @@
 <button (click)="showTooltip()">show / hide</button>
-<tooltip *ngIf="rootScope.show" [@fadeInOut-1] [text]='text'></tooltip>
+<tooltip *ngIf="show" [@fadeInOut-1] [show]="show" [text]='text' (reverseShow)="showTooltip()"></tooltip>

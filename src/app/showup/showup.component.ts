@@ -1,7 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
-import {RootScopeService} from '../rootScope.service.ts';
-import {IRoot} from '../IRoot.interface'
 export const fadeInOut = (name = 'fadeInOut', duration = 0.1) =>
   trigger(name, [
     transition(':enter', [
@@ -23,16 +21,10 @@ export const fadeInOut = (name = 'fadeInOut', duration = 0.1) =>
 export class ShowupComponent implements OnInit{
 
   @Input('text') text: string;
-  rootScope: IRoot;
+  @Input('show') show: boolean;
+  @Output() reverseShow = new EventEmitter<boolean>()
 
- constructor(private rootScopeService: RootScopeService){
-    this.rootScopeService.getRootScope().subscribe(res => {
-      if(res){
-        this.rootScope.show = res.show;
-      } else {
-        this.rootScope.show = true;
-      }
-    })
+ constructor(){
   }
 
  ngOnInit() {
@@ -40,6 +32,8 @@ export class ShowupComponent implements OnInit{
  }
 
  showTooltip(){
-    this.rootScope.show = !this.rootScope.show;
+   this.show = !this.show;
+   this.reverseShow.emit(this.show);
+    
   }
 }
