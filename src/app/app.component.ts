@@ -23,10 +23,10 @@ export class AppComponent implements OnInit  {
   
   constructor(){}
 
-  text = "Les montants affichés sont obtenus à partir des dernières valeurs liquidatives connues. Ce montant ne tient pas compte des opérations en cours ou à venir et des prélèvements au titre de la garantie plancher en cas de décès. Pour l'épargne investie sur le support Sécurité libellé en euros, le montant indiqué prend en compte les taux de rendement des années précédentes (sauf pour les garanties souscrites depuis le 1er janvier 2019) et le taux technique pour l’année en cours. Le rendement 2019 vous sera communiqué sur les relevés de compte que vous recevrez en début d’année 2020.";
+  text = "";
 
 ngOnInit(){
-  this.datas = [{id:1}, {id:2}]
+  this.datas = [{id:1, text:"test1"}, {id:2, text:"test2"}]
 }
   showTooltip(event){
     console.log(event)

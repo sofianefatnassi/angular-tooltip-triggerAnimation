@@ -1,6 +1,6 @@
 <div *ngFor="let item of datas">
 <button (click)="showTooltip(item)">show / hide</button>
-<tooltip *ngIf="show" [data]="item.id" [@fadeInOut-1] [show]="show" [text]='text' (reverseShow)="showTooltip(item)"></tooltip>
+<tooltip *ngIf="show" [data]="item.id" [@fadeInOut-1] [show]="show" [text]="item.text" (reverseShow)="showTooltip(item)"></tooltip>
 <br>
 <br>
 <br>
