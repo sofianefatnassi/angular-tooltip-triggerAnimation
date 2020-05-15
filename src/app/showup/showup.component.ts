@@ -23,6 +23,7 @@ export class ShowupComponent implements OnInit{
   @Input('text') text: string;
   @Input('show') show: boolean;
   @Output() reverseShow = new EventEmitter<boolean>()
+  @Input('data') data:any;
 
  constructor(){
   }
